@@ -11,7 +11,7 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-   _navigate() async{await Future.delayed(Duration(seconds: 5));
+   _navigate() async{await Future.delayed(Duration(seconds: 10));
     Navigator.push(context, MaterialPageRoute(builder: (context) => Skip()));
   }
    @override
@@ -22,7 +22,8 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset("assets/splash.png", fit: BoxFit.fill,)),
+      backgroundColor: Colors.white,
+      body: Center(child: Image.asset("assets/g5.gif", fit: BoxFit.fill,)),
     );
   }
 }

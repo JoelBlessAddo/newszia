@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newszia/Auth/login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -11,11 +12,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-   bool isChecked = false;
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
@@ -31,7 +32,7 @@ class _SignUpState extends State<SignUp> {
           ))
         ],
       ),
-       body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -127,20 +128,26 @@ class _SignUpState extends State<SignUp> {
               ],
             ),
             SizedBox(height: 30),
-            Container(
-              height: 50,
-              width: 320,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  color: Colors.redAccent),
-              child: Center(
-                  child: Text(
-                "Sign Up",
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white),
-              )),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => Login())));
+              },
+              child: Container(
+                height: 50,
+                width: 320,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    color: Colors.redAccent),
+                child: Center(
+                    child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                )),
+              ),
             ),
             SizedBox(height: 10),
             Padding(
@@ -163,16 +170,23 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                         color: Color.fromARGB(255, 200, 202, 202)),
-                        child: Stack(children: [
-                          Padding(
+                    child: Stack(
+                      children: [
+                        Padding(
                             padding: const EdgeInsets.only(left: 40, top: 15),
-                            child: Image.asset("assets/google.png",height: 20,)
+                            child: Image.asset(
+                              "assets/google.png",
+                              height: 20,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 18, left: 70),
+                          child: Text(
+                            "Google",
+                            style: TextStyle(fontWeight: FontWeight.w500),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 18, left: 70),
-                            child: Text("Google", style: TextStyle(fontWeight: FontWeight.w500),),
-                          )
-                        ],),
+                        )
+                      ],
+                    ),
                   ),
                   Container(
                     height: 50,
@@ -180,16 +194,23 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                         color: Color.fromARGB(255, 200, 202, 202)),
-                        child: Stack(children: [
-                          Padding(
+                    child: Stack(
+                      children: [
+                        Padding(
                             padding: const EdgeInsets.only(left: 35, top: 9),
-                            child: Image.asset("assets/apple.png",height: 30,)
+                            child: Image.asset(
+                              "assets/apple.png",
+                              height: 30,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 18, left: 70),
+                          child: Text(
+                            "Apple ID",
+                            style: TextStyle(fontWeight: FontWeight.w500),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 18, left: 70),
-                            child: Text("Apple ID", style: TextStyle(fontWeight: FontWeight.w500),),
-                          )
-                        ],),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
