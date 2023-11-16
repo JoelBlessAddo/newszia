@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Auth/sign_up.dart';
+import 'package:newszia/Auth/login.dart';
 
 class Skip extends StatefulWidget {
   const Skip({super.key});
@@ -43,11 +43,15 @@ class _SkipState extends State<Skip> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 30, right: 20),
-                child: Text(
-                  "Skip",
-                  style: GoogleFonts.roboto(
-                    color: Color.fromARGB(255, 11, 51, 85),
-                    fontSize: 20,
+                child: GestureDetector(onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => Login())));
+                },
+                  child: Text(
+                    "Skip",
+                    style: GoogleFonts.roboto(
+                      color: Color.fromARGB(255, 11, 51, 85),
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               )
@@ -117,7 +121,7 @@ class _SkipState extends State<Skip> {
                         left: 60,
                         bottom: 30,
                         child: GestureDetector(onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) => SignUp())));
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) => Login())));
                         },
                           child: Container(
                             decoration: BoxDecoration(

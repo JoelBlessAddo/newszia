@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Screens/home.dart';
+import 'package:newszia/Screens/languages.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) => Home())));
+                        MaterialPageRoute(builder: ((context) => Languages())));
                   },
                   child: Container(
                     height: 50,

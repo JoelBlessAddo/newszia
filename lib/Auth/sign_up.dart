@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Auth/login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -131,7 +130,7 @@ class _SignUpState extends State<SignUp> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => Login())));
+                    MaterialPageRoute(builder: ((context) => SignUp())));
               },
               child: Container(
                 height: 50,

@@ -11,7 +11,7 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-   _navigate() async{await Future.delayed(Duration(seconds: 10));
+   _navigate() async{await Future.delayed(Duration(seconds: 6));
     Navigator.push(context, MaterialPageRoute(builder: (context) => Skip()));
   }
    @override
