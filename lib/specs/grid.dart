@@ -11,12 +11,12 @@ class Box extends StatefulWidget {
 }
 
 class _BoxState extends State<Box> {
-   bool isChecked = false;
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> Topics = [
       {
-        "image":  "assets/sc2.jpeg",
+        "image": "assets/sc2.jpeg",
         "title": "Science",
       },
       {
@@ -24,11 +24,11 @@ class _BoxState extends State<Box> {
         "title": "Technology",
       },
       {
-        "image":  "assets/f1.jpeg",
+        "image": "assets/f1.jpeg",
         "title": "Fashion",
       },
       {
-        "image":  "assets/fott.jpeg",
+        "image": "assets/fott.jpeg",
         "title": "Sports",
       },
       {
@@ -36,7 +36,7 @@ class _BoxState extends State<Box> {
         "title": "Entertainment",
       },
       {
-        "image":  "assets/br1.jpeg",
+        "image": "assets/br1.jpeg",
         "title": "Culture",
       }
     ];
@@ -60,32 +60,57 @@ class _BoxState extends State<Box> {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    child: ClipRRect(borderRadius: BorderRadius.all(Radius.circular(25)),child: Image.asset("${Topics[index]["image"]}", fit: BoxFit.cover,)),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        child: Image.asset(
+                          "${Topics[index]["image"]}",
+                          fit: BoxFit.cover,
+                        )),
                   ),
-                   Positioned(
+                  Positioned(
                     top: 250,
                     left: 40,
                     right: 0,
                     bottom: 0,
-                    child: ClipRRect(borderRadius: BorderRadius.all(Radius.circular(25)),child: Text("${Topics[index]["title"]}",style: GoogleFonts.roboto(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),)),
-                  ),Positioned(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        child: Text(
+                          "${Topics[index]["title"]}",
+                          style: GoogleFonts.roboto(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                        )),
+                  ),
+                  Positioned(
                     top: 0,
                     left: 90,
                     right: 0,
                     bottom: 200,
-                    child: ClipRRect(borderRadius: BorderRadius.all(Radius.circular(25)),child:  Container(height: 20, width: 20, decoration: BoxDecoration(color: const Color.fromARGB(255, 194, 191, 191)),
-                      child: Checkbox(side: BorderSide(style: BorderStyle.solid),
-                            value: isChecked,
-                            onChanged: (bool? newValue) {
-                              setState(() {
-                                isChecked = newValue!;
-                              });
-                            }),
-                    ),),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 10,
+                          width: 10,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 211, 208, 208),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          child: Checkbox(
+                              value: isChecked,
+                              onChanged: (bool? newValue) {
+                                setState(() {
+                                  isChecked = newValue!;
+                                });
+                              }),
+                        ),
+                      ),
+                    ),
                   )
                 ],
-              )
-              );
+              ));
         });
   }
 }
