@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:newszia/Screens/bookmark.dart';
+import 'package:newszia/Screens/search.dart';
 import 'package:newszia/Screens/home.dart';
 import 'package:newszia/Screens/profile.dart';
-import 'package:newszia/Screens/search.dart';
+import 'package:newszia/Screens/bookmark.dart';
 
 class bottNav extends StatefulWidget {
   const bottNav({super.key});
@@ -15,7 +15,7 @@ class bottNav extends StatefulWidget {
 }
 
 class _bottNavState extends State<bottNav> {
-  List<Widget> navBar = [Home(), BookMark(), Search(), Profile()];
+  List<Widget> navBar = [Home(), Search(), BookMark(), Profile()];
 
   int _selectedIndex = 0;
   @override
