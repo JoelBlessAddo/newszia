@@ -19,6 +19,7 @@ class _SkipState extends State<Skip> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -116,7 +117,7 @@ class _SkipState extends State<Skip> {
                           thickness: 5,
                         )),
                     Positioned(
-                        top: 560,
+                        top: 600,
                         right: 60,
                         left: 60,
                         bottom: 30,

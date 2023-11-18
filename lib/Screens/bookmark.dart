@@ -38,7 +38,7 @@ class _BookMarkState extends State<BookMark> {
           SizedBox(height: 20),
           Container(
             height: 60,
-            width: 300,
+            width: 350,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               color: Color.fromARGB(255, 217, 221, 221),
@@ -61,7 +61,6 @@ class _BookMarkState extends State<BookMark> {
               ),
             ),
           ),
-          SizedBox(height: 10),
           Expanded(
               child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),

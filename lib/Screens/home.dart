@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newszia/specs/tabbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
       body: Column(
         children: [
           SizedBox(
-            height: 30,
+            height: 40,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
@@ -79,9 +80,9 @@ class _HomeState extends State<Home> {
                     )),
                 Positioned(
                     top: 20,
-                    right: 30,
-                    left: 250,
-                    bottom: 310,
+                    right: 20,
+                    left: 290,
+                    bottom: 330,
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.redAccent,
@@ -91,10 +92,10 @@ class _HomeState extends State<Home> {
                           icon: Icon(Icons.bookmark_outline_outlined)),
                     )),
                 Positioned(
-                    top: 140,
-                    right: 220,
-                    left: 40,
-                    bottom: 210,
+                    top: 160,
+                    right: 260,
+                    left: 30,
+                    bottom: 215,
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 117, 181, 233),
@@ -107,7 +108,7 @@ class _HomeState extends State<Home> {
                       )),
                     )),
                 Positioned(
-                    top: 150,
+                    top: 165,
                     right: 70,
                     left: 120,
                     bottom: 0,
@@ -117,20 +118,20 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w600, color: Colors.white),
                     )),
                 Positioned(
-                    top: 200,
+                    top: 220,
                     right: 100,
                     left: 30,
                     bottom: 120,
                     child: Text(
                       "The UNESCO World Heritage Site with sky-\nhigh house prices",
                       style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
-                          fontSize: 18),
+                          fontSize: 16),
                     )),
                 Positioned(
-                    top: 290,
-                    right: 250,
+                    top: 320,
+                    right: 280,
                     left: 30,
                     bottom: 40,
                     child: Container(
@@ -140,16 +141,16 @@ class _HomeState extends State<Home> {
                       child: Center(
                           child: ClipRRect(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
+                                  BorderRadius.all(Radius.circular(50)),
                               child: Image.asset(
                                 "assets/bbc.png",
                                 fit: BoxFit.fill,
                               ))),
                     )),
                 Positioned(
-                    top: 310,
-                    right: 130,
-                    left: 85,
+                    top: 335,
+                    right: 60,
+                    left: 90,
                     bottom: 40,
                     child: Text(
                       "BBC NEWS",
@@ -157,9 +158,9 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w600, color: Colors.white),
                     )),
                 Positioned(
-                    top: 310,
+                    top: 340,
                     right: 30,
-                    left: 230,
+                    left: 240,
                     bottom: 40,
                     child: Text(
                       "3 hours ago",
@@ -169,8 +170,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),SizedBox(height: 10),
-          Row(children: [
-          ],)
         ],
       ),
     );

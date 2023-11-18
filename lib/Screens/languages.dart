@@ -60,7 +60,7 @@ class _LanguagesState extends State<Languages> {
           SizedBox(height: 30),
           Container(
             height: 60,
-            width: 300,
+            width: 350,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               color: Color.fromARGB(255, 217, 221, 221),

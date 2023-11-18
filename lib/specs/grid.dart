@@ -83,17 +83,15 @@ class _BoxState extends State<Box> {
                         )),
                   ),
                   Positioned(
-                    top: 0,
-                    left: 90,
+                    top: 10,
+                    left: 120,
                     right: 0,
-                    bottom: 200,
+                    bottom: 210,
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(25)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          height: 10,
-                          width: 10,
                           decoration: BoxDecoration(
                               color: Color.fromARGB(255, 211, 208, 208),
                               borderRadius:
