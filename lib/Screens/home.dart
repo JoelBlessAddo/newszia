@@ -3,6 +3,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newszia/Screens/notify.dart';
 import 'package:newszia/Tabs/Business.dart';
 import 'package:newszia/Tabs/Politics.dart';
 import 'package:newszia/Tabs/Sports.dart';
@@ -56,7 +57,10 @@ class _HomeState extends State<Home> {
                             color: Color.fromARGB(255, 11, 51, 85)))
                   ])),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => Notify())));
+                    },
                     icon: Icon(Icons.notifications_none_outlined),
                     color: Colors.black,
                   )
@@ -186,14 +190,14 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 20),
             ButtonsTabBar(
-              backgroundColor:  const Color.fromARGB(255, 4, 66, 97),
+              backgroundColor: const Color.fromARGB(255, 4, 66, 97),
               unselectedBackgroundColor: Colors.white,
               labelStyle: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
               unselectedLabelStyle: TextStyle(
-                color:   Colors.black,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
               unselectedBorderColor: Colors.white,
@@ -248,7 +252,6 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 10),
-            
           ],
         ),
       ),

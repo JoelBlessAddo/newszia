@@ -59,15 +59,6 @@ class _SearchState extends State<Search> {
                   GoogleFonts.roboto(fontWeight: FontWeight.w800, fontSize: 16),
             ),
           ),
-          Row(
-            children: [
-              ListView.builder(
-                  itemCount: 4,
-                  itemBuilder: ((context, index) {
-                    return ListTile(leading: Text("data"));
-                  }))
-            ],
-          )
         ],
       ),
     );
