@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newszia/Tabs/politics.dart';
 import 'package:newszia/Tabs/science.dart';
-import 'package:newszia/Tabs/sports.dart';
 import 'package:newszia/notifyTabs/follow.dart';
 import 'package:newszia/notifyTabs/n_all.dart';
 import 'package:newszia/notifyTabs/n_bookmark.dart';
@@ -108,10 +107,10 @@ class _NotifyState extends State<Notify> {
                     child: Follow(),
                   ),
                   Center(
-                    child: N_share(),
+                    child: NotifyShare(),
                   ),
                   Center(
-                    child: n_bookmark(),
+                    child: nBookMark(),
                   ),
                   Center(
                     child: Politics(),

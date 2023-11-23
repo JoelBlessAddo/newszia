@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newszia/Screens/home_mini.dart';
 
 class All extends StatefulWidget {
   const All({super.key});

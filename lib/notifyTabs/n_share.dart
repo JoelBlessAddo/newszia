@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class N_share extends StatefulWidget {
-  const N_share({super.key});
+class NotifyShare extends StatefulWidget {
+  const NotifyShare({super.key});
 
   @override
-  State<N_share> createState() => _N_shareState();
+  State<NotifyShare> createState() => _NotifyShareState();
 }
 
-class _N_shareState extends State<N_share> {
+class _NotifyShareState extends State<NotifyShare> {
   @override
   Widget build(BuildContext context) {
     return Scaffold();

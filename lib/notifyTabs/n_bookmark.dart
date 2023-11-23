@@ -1,13 +1,15 @@
+// ignore_for_file: prefer_const_constructors, camel_case_types
+
 import 'package:flutter/material.dart';
 
-class n_bookmark extends StatefulWidget {
-  const n_bookmark({super.key});
+class nBookMark extends StatefulWidget {
+  const nBookMark({super.key});
 
   @override
-  State<n_bookmark> createState() => _n_bookmarkState();
+  State<nBookMark> createState() => _nBookMarkState();
 }
 
-class _n_bookmarkState extends State<n_bookmark> {
+class _nBookMarkState extends State<nBookMark> {
   @override
   Widget build(BuildContext context) {
     return Scaffold();
