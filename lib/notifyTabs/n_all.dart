@@ -13,7 +13,7 @@ class N_all extends StatefulWidget {
 class _N_allState extends State<N_all> {
   @override
   Widget build(BuildContext context) {
-    final w = MediaQuery.of(context).size.width;
+    // final w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
