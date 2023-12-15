@@ -19,6 +19,14 @@ class _HomeMiniState extends State<HomeMini> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      floatingActionButton:  FloatingActionButton(
+              backgroundColor: const Color.fromARGB(255, 230, 228, 228),
+              onPressed: () {},
+              child: Icon(
+                Icons.thumb_up_alt_outlined,
+                color: Colors.redAccent,
+              ),
+            ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -251,14 +259,7 @@ class _HomeMiniState extends State<HomeMini> {
                     fontSize: 16, fontWeight: FontWeight.w600),
               ),
             ),
-            FloatingActionButton(
-              backgroundColor: const Color.fromARGB(255, 230, 228, 228),
-              onPressed: () {},
-              child: Icon(
-                Icons.thumb_up_alt_outlined,
-                color: Colors.redAccent,
-              ),
-            )
+           
           ],
         ),
       ),

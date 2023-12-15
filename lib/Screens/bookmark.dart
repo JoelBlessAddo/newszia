@@ -18,7 +18,7 @@ class _BookMarkState extends State<BookMark> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          SizedBox(height: 30),
+          SizedBox(height: 40),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
               padding: const EdgeInsets.only(left: 20),

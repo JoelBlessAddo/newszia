@@ -27,7 +27,7 @@ class _bottNavState extends State<bottNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: GNav(
+      bottomNavigationBar:GNav(
         tabs: [
           GButton(
             icon: Icons.home_outlined,

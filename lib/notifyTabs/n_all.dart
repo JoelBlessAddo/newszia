@@ -13,27 +13,38 @@ class N_all extends StatefulWidget {
 class _N_allState extends State<N_all> {
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "Today",
-              style: GoogleFonts.roboto(
-                  color: const Color.fromARGB(255, 7, 36, 59),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Today",
+                  style: GoogleFonts.roboto(
+                      color: const Color.fromARGB(255, 7, 36, 59),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          ListView.builder(itemBuilder: ((context, index) {
-            return ListTile(
-              
-             );
-          }))
-        ],
+            Row(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                   
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

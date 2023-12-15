@@ -50,198 +50,178 @@ class _LoginState extends State<Login> {
                     ])),
               ),
               SizedBox(height: 50),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Center(
-                  child: Column(children: [
-                    Container(
-                        height: 55,
-                        width: 350,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 217, 221, 221),
-                            borderRadius: BorderRadius.all(Radius.circular(15))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            keyboardType: TextInputType.emailAddress,
-                            controller: _email,
-                            decoration: InputDecoration(
-                               border: OutlineInputBorder(borderSide: BorderSide.none),
-                               hintText: "Email",
-                                suffixIcon: Icon(Icons.person_outline_rounded)),
-                            validator: (value) {
-                              if (value!.isEmpty) return ("Enter Email");
-                              return null;
+              Container(
+                  height: 55,
+                  width: 350,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 217, 221, 221),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    controller: _email,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(borderSide: BorderSide.none),
+                        labelText: "Email",
+                        suffixIcon: Icon(Icons.person_outline_rounded)),
+                    validator: (value) {
+                      if (value!.isEmpty) return ("Enter Email");
+                      return null;
+                    },
+                  )),
+              SizedBox(height: 20),
+              Container(
+                  height: 55,
+                  width: 350,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 217, 221, 221),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: TextFormField(
+                    controller: _password,
+                    obscureText: isToggle,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(borderSide: BorderSide.none),
+                        labelText: "Password",
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isToggle = !isToggle;
+                              });
                             },
+                            icon: Icon(isToggle
+                                ? Icons.visibility_off
+                                : Icons.visibility))),
+                    validator: (value) {
+                      if (value!.isEmpty)
+                        return ("Enter Password");
+                      else if (_password.text.length < 6) {
+                        return ("Requires six Characters long");
+                      }
+                      return null;
+                    },
+                  )),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Checkbox(
+                        value: isChecked,
+                        onChanged: (bool? newValue) {
+                          setState(() {
+                            isChecked = newValue!;
+                          });
+                        }),
+                  ),
+                  RichText(
+                      text: TextSpan(
+                          style: GoogleFonts.roboto(
+                            color: Color.fromARGB(255, 174, 177, 177),
                           ),
-                        )),
-                    SizedBox(height: 20),
-                    Container(
-                        height: 55,
-                        width: 350,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 217, 221, 221),
-                            borderRadius: BorderRadius.all(Radius.circular(15))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            controller: _password,
-                            obscureText: isToggle,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(borderSide: BorderSide.none),
-                                hintText: "Password",
-                                suffixIcon: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        isToggle = !isToggle;
-                                      });
-                                    },
-                                    icon: Icon(isToggle
-                                        ? Icons.visibility_off
-                                        : Icons.visibility))),
-                            validator: (value) {
-                              if (value!.isEmpty)
-                                return ("Enter Password");
-                              else if (_password.text.length < 6) {
-                                return ("Requires six Characters long");
-                              }
-                              return null;
-                            },
-                          ),
-                        )),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 6),
-                          child: Checkbox(
-                              value: isChecked,
-                              onChanged: (bool? newValue) {
-                                setState(() {
-                                  isChecked = newValue!;
-                                });
-                              }),
-                        ),
-                        RichText(
-                            text: TextSpan(
-                                style: GoogleFonts.roboto(
-                                  color: Color.fromARGB(255, 174, 177, 177),
-                                ),
-                                children: [
-                              TextSpan(
-                                  text: "Remember Me",
-                                  style: TextStyle(fontWeight: FontWeight.w600)),
-                            ])),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 90),
+                          children: [
+                        TextSpan(
+                            text: "Remember Me",
+                            style: TextStyle(fontWeight: FontWeight.w600)),
+                      ])),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 105),
+                    child: Text(
+                      "Forgot password?",
+                      style: GoogleFonts.roboto(
+                          color: Colors.redAccent, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
+              GestureDetector(
+                onTap: () {
+                  _submitButton();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Center(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      height: 50,
+                      width: 350,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          color: Colors.redAccent),
+                      child: Center(
                           child: Text(
-                            "Forget password?",
-                            style: GoogleFonts.roboto(
-                                color: Colors.redAccent,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 30),
-                    GestureDetector(
-                      onTap: () {
-                       _submitButton();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Center(
-                          child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            height: 50,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(15)),
-                                color: Colors.redAccent),
-                            child: Center(
-                                child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white),
-                            )),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Text(
-                        "Or continue with",
-                        style: GoogleFonts.roboto(
+                        "Login",
+                        style: TextStyle(
+                            fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 174, 177, 177)),
-                      ),
+                            color: Colors.white),
+                      )),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Text(
+                  "Or continue with",
+                  style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromARGB(255, 174, 177, 177)),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          color: Color.fromARGB(255, 200, 202, 202)),
+                      child: Stack(
                         children: [
-                          Container(
-                            height: 50,
-                            width: 150,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                                color: Color.fromARGB(255, 200, 202, 202)),
-                            child: Stack(
-                              children: [
-                                Padding(
-                                    padding:
-                                        const EdgeInsets.only(left: 40, top: 15),
-                                    child: Image.asset(
-                                      "assets/google.png",
-                                      height: 20,
-                                    )),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 18, left: 70),
-                                  child: Text(
-                                    "Google",
-                                    style: TextStyle(fontWeight: FontWeight.w500),
-                                  ),
-                                )
-                              ],
+                          Padding(
+                              padding: const EdgeInsets.only(left: 40, top: 15),
+                              child: Image.asset(
+                                "assets/google.png",
+                                height: 20,
+                              )),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 18, left: 70),
+                            child: Text(
+                              "Google",
+                              style: TextStyle(fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          Container(
-                            height: 50,
-                            width: 150,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                                color: Color.fromARGB(255, 200, 202, 202)),
-                            child: Stack(
-                              children: [
-                                Padding(
-                                    padding:
-                                        const EdgeInsets.only(left: 35, top: 9),
-                                    child: Image.asset(
-                                      "assets/apple.png",
-                                      height: 30,
-                                    )),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 18, left: 70),
-                                  child: Text(
-                                    "Apple ID",
-                                    style: TextStyle(fontWeight: FontWeight.w500),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                          )
                         ],
                       ),
-                    )
-                  ]),
+                    ),
+                    Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          color: Color.fromARGB(255, 200, 202, 202)),
+                      child: Stack(
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.only(left: 35, top: 9),
+                              child: Image.asset(
+                                "assets/apple.png",
+                                height: 30,
+                              )),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 18, left: 70),
+                            child: Text(
+                              "Apple ID",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
@@ -249,22 +229,21 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
-    
   }
- void _submitButton() {
-  if (_formKey.currentState!.validate()) {
-    _formKey.currentState!.save();
 
-    String username = _email.text;
-    String password = _password.text;
+  void _submitButton() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
 
-    if (username.isNotEmpty && password.isNotEmpty) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Languages()),
-      );
+      String username = _email.text;
+      String password = _password.text;
+
+      if (username.isNotEmpty && password.isNotEmpty) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Languages()),
+        );
+      }
     }
   }
-}
-
 }

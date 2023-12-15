@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Screens/home_mini.dart';
+import 'package:newszia/Screens/bbc.dart';
 
 class All extends StatefulWidget {
   const All({super.key});
@@ -55,92 +55,96 @@ class _AllState extends State<All> {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            for (var data in content)
-              Container(
-                margin: EdgeInsets.all(20),
-                height: h * 0.19,
-                width: w * 1,
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 231, 227, 227),
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                child: Stack(
-                  children: [
-                    Positioned(
-                        top: 10,
-                        left: 10,
-                        bottom: 10,
-                        right: 230,
-                        child: Container(
+        child: GestureDetector(onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: ((context) => Bbc())));
+        },
+          child: Column(
+            children: [
+              for (var data in content)
+                Container(
+                  margin: EdgeInsets.all(20),
+                  height: h * 0.19,
+                  width: w * 1,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 231, 227, 227),
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                          top: 10,
+                          left: 10,
+                          bottom: 10,
+                          right: 230,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.redAccent,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15))),
+                              child: ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15)),
+                                  child: Image.asset(
+                                    data["image"],
+                                    fit: BoxFit.cover,
+                                  )))),
+                      Positioned(
+                          top: 10,
+                          left: 130,
+                          right: 0,
+                          bottom: 0,
+                          child: Text(
+                            data['ID'],
+                            style: GoogleFonts.roboto(
+                                color: Colors.black, fontWeight: FontWeight.w500),
+                          )),
+                      Positioned(
+                          top: 10,
+                          left: 200,
+                          right: 0,
+                          bottom: 0,
+                          child: Text(data['reads'],
+                              style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w800))),
+                      Positioned(
+                          top: 0,
+                          left: 310,
+                          right: 10,
+                          bottom: 120,
+                          child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.redAccent,
+                                color: Color.fromARGB(255, 231, 227, 227),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(15))),
-                            child: ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                                child: Image.asset(
-                                  data["image"],
-                                  fit: BoxFit.cover,
-                                )))),
-                    Positioned(
-                        top: 10,
-                        left: 130,
-                        right: 0,
-                        bottom: 0,
-                        child: Text(
-                          data['ID'],
-                          style: GoogleFonts.roboto(
-                              color: Colors.black, fontWeight: FontWeight.w500),
-                        )),
-                    Positioned(
-                        top: 10,
-                        left: 200,
-                        right: 0,
-                        bottom: 0,
-                        child: Text(data['reads'],
-                            style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w800))),
-                    Positioned(
-                        top: 0,
-                        left: 310,
-                        right: 10,
-                        bottom: 120,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 231, 227, 227),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.bookmark_outline_outlined),
-                            color: Colors.redAccent,
-                          ),
-                        )),
-                    Positioned(
-                        top: 40,
-                        left: 130,
-                        right: 10,
-                        bottom: 0,
-                        child: Text(data['text'],
-                            style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w900))),
-                    Positioned(
-                        top: 100,
-                        left: 130,
-                        right: 10,
-                        bottom: 0,
-                        child: Text(data['time'],
-                            style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500)))
-                  ],
-                ),
-              )
-          ],
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.bookmark_outline_outlined),
+                              color: Colors.redAccent,
+                            ),
+                          )),
+                      Positioned(
+                          top: 40,
+                          left: 130,
+                          right: 10,
+                          bottom: 0,
+                          child: Text(data['text'],
+                              style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w900))),
+                      Positioned(
+                          top: 100,
+                          left: 130,
+                          right: 10,
+                          bottom: 0,
+                          child: Text(data['time'],
+                              style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500)))
+                    ],
+                  ),
+                )
+            ],
+          ),
         ),
       ),
     );
