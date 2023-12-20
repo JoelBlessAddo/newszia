@@ -13,6 +13,8 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -24,8 +26,8 @@ class _SearchState extends State<Search> {
         children: [
           Center(
             child: Container(
-              height: 60,
-              width: 350,
+              height: h * 0.08,
+              width: w * 0.9,
               margin: EdgeInsets.symmetric(horizontal: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -52,7 +54,7 @@ class _SearchState extends State<Search> {
           ),
           SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.only(right: 200, top: 10),
+            padding: const EdgeInsets.only(right: 220, top: 10),
             child: Text(
               "Recent search",
               style:

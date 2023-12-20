@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Screens/bbc.dart';
+import 'package:newszia/Screens/all_details.dart';
 
 class All extends StatefulWidget {
   const All({super.key});
@@ -56,7 +56,7 @@ class _AllState extends State<All> {
     return Scaffold(
       body: SingleChildScrollView(
         child: GestureDetector(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: ((context) => Bbc())));
+          Navigator.push(context, MaterialPageRoute(builder: ((context) => AllDetails())));
         },
           child: Column(
             children: [

@@ -4,7 +4,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newszia/BBCtabs/news.dart';
-import 'package:newszia/Tabs/business.dart';
+import 'package:newszia/HomeTabs/business.dart';
 import 'package:share_plus/share_plus.dart';
 
 class Bbc extends StatefulWidget {
@@ -81,7 +81,7 @@ class _BbcState extends State<Bbc> {
                         height: 45,
                         width: 200,
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 241, 86, 86),
+                            color: Colors.redAccent,
                             borderRadius: BorderRadius.circular(25)),
                         child: Center(
                             child: Text(

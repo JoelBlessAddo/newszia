@@ -3,8 +3,8 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newszia/Tabs/politics.dart';
-import 'package:newszia/Tabs/science.dart';
+import 'package:newszia/HomeTabs/politics.dart';
+import 'package:newszia/HomeTabs/science.dart';
 import 'package:newszia/notifyTabs/follow.dart';
 import 'package:newszia/notifyTabs/n_all.dart';
 import 'package:newszia/notifyTabs/n_bookmark.dart';
@@ -57,16 +57,19 @@ class _NotifyState extends State<Notify> {
                   TextSpan(
                       text: "You have ",
                       style: GoogleFonts.roboto(
-                          color: const Color.fromARGB(255, 17, 45, 68), fontWeight: FontWeight.w600)),
+                          color: const Color.fromARGB(255, 17, 45, 68),
+                          fontWeight: FontWeight.w600)),
                   TextSpan(
                       text: "4 notifications ",
                       style: GoogleFonts.roboto(color: Colors.redAccent)),
                   TextSpan(
                       text: "today",
                       style: GoogleFonts.roboto(
-                          color: Color.fromARGB(255, 17, 45, 68), fontWeight: FontWeight.w600))
+                          color: Color.fromARGB(255, 17, 45, 68),
+                          fontWeight: FontWeight.w600))
                 ])),
-              ),SizedBox(height: 20),
+              ),
+              SizedBox(height: 20),
               ButtonsTabBar(
                 backgroundColor: const Color.fromARGB(255, 4, 66, 97),
                 unselectedBackgroundColor: Colors.white,
@@ -97,30 +100,30 @@ class _NotifyState extends State<Notify> {
                   Tab(text: "Science"),
                 ],
               ),
-               Expanded(
-              child: TabBarView(
-                children: [
-                  Center(
-                    child: N_all(),
-                  ),
-                  Center(
-                    child: Follow(),
-                  ),
-                  Center(
-                    child: NotifyShare(),
-                  ),
-                  Center(
-                    child: nBookMark(),
-                  ),
-                  Center(
-                    child: Politics(),
-                  ),
-                  Center(
-                    child: Science(),
-                  ),
-                ],
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Center(
+                      child: N_all(),
+                    ),
+                    Center(
+                      child: Follow(),
+                    ),
+                    Center(
+                      child: NotifyShare(),
+                    ),
+                    Center(
+                      child: nBookMark(),
+                    ),
+                    Center(
+                      child: Politics(),
+                    ),
+                    Center(
+                      child: Science(),
+                    ),
+                  ],
+                ),
               ),
-            ),
             ],
           ),
         ));

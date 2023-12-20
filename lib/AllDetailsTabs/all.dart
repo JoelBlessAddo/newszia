@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class News extends StatefulWidget {
-  const News({super.key});
+class DetailAll extends StatefulWidget {
+  const DetailAll({super.key});
 
   @override
-  State<News> createState() => _NewsState();
+  State<DetailAll> createState() => _DetailAllState();
 }
 
-class _NewsState extends State<News> {
+class _DetailAllState extends State<DetailAll> {
   final List<Map<String, dynamic>> content = [
     {
       "text": "Peak oil is coming.That won't\nsave the world",
@@ -104,7 +104,7 @@ class _NewsState extends State<News> {
                                 fontWeight: FontWeight.w800))),
                     Positioned(
                         top: 0,
-                        left: 310,
+                        left: 280,
                         right: 10,
                         bottom: 120,
                         child: Container(
@@ -114,7 +114,7 @@ class _NewsState extends State<News> {
                                   BorderRadius.all(Radius.circular(10))),
                           child: IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.bookmark_outline_outlined),
+                            icon: Icon(Icons.bookmark_add_outlined),
                             color: Colors.redAccent,
                           ),
                         )),

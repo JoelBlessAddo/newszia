@@ -11,6 +11,12 @@ class N_all extends StatefulWidget {
 }
 
 class _N_allState extends State<N_all> {
+  // final List<Map<String, dynamic>> allnotification = [
+  //   {"image": "assets/AL.png", "TEXT": "Alice added you as a friend"},
+  //   {"image": "assets/AL.png", "TEXT": "Alice added you as a friend"},
+  //   {"image": "assets/AL.png", "TEXT": "Alice added you as a friend"},
+  //   {"image": "assets/AL.png", "TEXT": "Alice added you as a friend"},
+  // ];
   @override
   Widget build(BuildContext context) {
     // final w = MediaQuery.of(context).size.width;
@@ -33,16 +39,6 @@ class _N_allState extends State<N_all> {
                 ),
               ),
             ),
-            Row(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                   
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

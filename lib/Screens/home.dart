@@ -8,11 +8,11 @@ import 'package:newszia/Screens/notify.dart';
 import 'package:newszia/Tabs/Business.dart';
 import 'package:newszia/Tabs/Politics.dart';
 import 'package:newszia/Tabs/Sports.dart';
-import 'package:newszia/Tabs/all.dart';
-import 'package:newszia/Tabs/fashion.dart';
-import 'package:newszia/Tabs/latest.dart';
-import 'package:newszia/Tabs/science.dart';
-import 'package:newszia/Tabs/technology.dart';
+import 'package:newszia/HomeTabs/all.dart';
+import 'package:newszia/HomeTabs/fashion.dart';
+import 'package:newszia/HomeTabs/latest.dart';
+import 'package:newszia/HomeTabs/science.dart';
+import 'package:newszia/HomeTabs/technology.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
